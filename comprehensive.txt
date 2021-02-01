@@ -1,0 +1,17 @@
+Nama : Budiman Putra Jaya
+NIM  : 00000012802
+
+1. Predefined variable adalah variable yang telah didefinisikan oleh PHP terlebih dahulu.
+   Contoh:
+	$_GET = untuk mendapatkan data yang dikirim dari client ke server dengan method GET
+	$_POST = untuk mendapatkan data yang dikirim dari client ke server dengan method POST
+	$_COOKIE = untuk mengakses cookie
+	$_REQUEST = untuk mendapatkan data dengan method GET, POST, dan COOKIE
+
+2. 
+- GET mentransfer informasi melalui http head location dan menampilkan data pada alamat URL,
+tetapi GET tidak aman, tidak dapat upload file, dan transfer limited amount of data.
+    Kelebihan = lebih cepat
+
+- POST mentransfer informasi melalui document body
+   Kelebihan = aman, dapat transfer large amount of data, dapat upload file

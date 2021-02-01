@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Game UTS</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="logic2.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body onload="game2()">
+	<div class="row" id="marginawal">
+	<div class="col-md-12 text-center">
+		<div class="row" >
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 border">
+					<div class="col-sm-5 text-right"style="display: inline-block;">
+						<button class="add-damage btn border" id="btnsave" onclick="buttonsave()">Save</button>
+					</div>
+					<div  class="col-sm-5 text-left"style="display: inline-block;">
+						<button class="add-damage btn border" id="btnload" onclick="buttonload()">Load</button>
+					</div>
+		</div>
+		<div class="col-sm-1"></div>
+		</div>
+	</div>
+	</div>
+	<div class="row" id="margintengah">
+			<div class="col-sm-1"></div>
+		  		<div class="col-sm-10"  id="formContent">
+		  				<div class="row">
+		  					<div class="col-md-6">
+			  				<progress id="healthplayer" class="col-md-12" style="display: inline;" value="100" max="100">
+			     			</progress>
+			     			<div class="col-sm-6" style="display: inline; text-align: center; float: center;" onload="ambiluname()"  id="username">
+		      				</div>
+			     			</div>
+			     			<!-- <div class="col-sm-2"></div> -->
+			     			<div class="col-md-6">
+			     			<progress id="healthmonster" value="100" max="100" class="col-md-12" style="display: inline;">
+			      			</progress>
+			      			<div class="col-sm-6" style="display: inline; text-align: center; float: center;">
+		      					<p id="texttengah" style="float: center; text-align: center;"><strong>Monster</strong></p>
+		      				</div>
+			      			</div>
+		      			</div>
+		  		</div>
+		  	<div class="col-sm-1 blue"></div>
+	</div>
+	<div class="row" id="marginbawah">
+		<div class="col-sm-1"></div>
+		<div id="btnstart" class="col-md-10 text-center border">
+		    <div class="add-damage btn center" id="btnstartsize" type="button"  onclick="myFunction()">START FIGHT</div>	
+		</div>
+		<div id="btnatck" style="display: none"class="col-md-10 text-center border">
+  			<button class="add-damage btn center" id="btnattack" type="button" onclick="buttonattack()" ><strong>	Attack</strong></button>
+  			<button class="add-damage btn center" id="btnspecial" type="button" onclick="buttonspecial()"><strong>Special Attack</strong></button>
+  			<button class="add-damage btn 		center" id="btngiveup" type="button" onclick="buttongiveup()"><strong>GIVE UP</strong></button>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+
+  	<div class="row">
+  		<div class="col-sm-1"></div>
+  		<div class="col-sm-10 border">
+  			<div id="history"></div>
+  		</div>
+  		<div class="col-sm-1"></div>
+  	</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+1). - SQL injection, adalah teknik hacking pada keamanan komputer yang membuat seseorang dapat mengakses kontrol terhadap query database pemilik web ( korban ). mirip XSS hanya si penyerang dalam hal ini memanfaatkan database.
+    - Cross Site Scripting merupakan teknik serangan injeksi code yang dilakukan oleh penyerang dengan memasukan dapat memasukkan isi kode HTML / dapat juga script code ke suatu situs. Contoh HTML yang dapat dimasukkan si penyerang dpat berupa jump scare untuk korban, dan script yang dimasukkan agar dapat melempar cookie.
+
+2). dengan menggunakan suatu method yang dapat membantu.
+untuk SQL injection dapat dibantu denan method yang membersihkan inputan seperti mysql_real_escape_string() yang membuat query tidak dijalankan dan akan men-return suatu string.
+Untuk XSS dapat menggunakan htmlspecialchars() dan fungsi strip_tags()
+method htmlspecialchars ini mengubah 4 karakakter yang biasa digunakan html sehingga tidk di proses di web browser kita
+
+3). md5 ( message-digest algorithm 5) adalah suatu teknik meng-enkripsi yang biasa digunakan untuk meng-enkrip isi password di database dan merupakan pengganti MD4 setelah diketahui MD4 masih tidak aman.
+
+4). 3 jenis hash :
+- DES (Unix)
+	Digunakan untuk linux , yang meng-hash suatu data menjadi 13 karakter, 2 karakter awal merupakan salt ( karakter acak ).
+- Domain Cached Credentials
+	Digunakan untuk mencache password-password domain windows yang memiliki panjang 16 bytes, menggunakan bantuan proses MD4
+- SHA-1
+	Digunakan seperti forum dan CMS memiliki panjang 20 bytes, dapat dipanggil di php dengan method sha1().
+	

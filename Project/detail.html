@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/png" href="Asset/image/tmdb2.png"/>
+
+		<title>Detail</title>
+
+		<!--Google Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:500|Work+Sans:400,600" rel="stylesheet">
+		<!--END OF Google Fonts-->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="Asset/js/dataApp.js"></script>
+		<script src="Asset/js/dataAppJquery.js"></script>
+
+		<link rel="stylesheet" href="Asset/css/main.css" type=text/css>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body id="dataApp" ng-app="data" ng-controller="DetailController">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-2 quicksand medium">
+			<a class="navbar-brand ml-5" href="/data.html"><img ng-src="/Asset/image/tmdb-hori.png" alt="logo" width="auto" height="60"></a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/home.html">Home <span class="sr-only">(current)</span></a>
+					</li>
+
+					<li class="nav-item">
+                        <a class="nav-link" href="/data.html">Data</a>
+                    </li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/aboutus.html">About Us</a>
+					</li>
+				</ul>
+				
+				<span class="navbar-text dropdown mr-5">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Welcome, <span class="text-color-light"><b>{{username}}</b></span>
+					</a>
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item black" href="#" ng-click="logout()">Logout</a>
+					</div>
+				</span>
+			</div>
+		</nav>
+
+
+		<div class="card bg-dark text-white">
+			<img class="card-img detail-backdrop" ng-src="{{recordMovie.backdrop_path}}" alt="{{movieDetails.title}}">
+			<div class="card-img-overlay card-img-overlay-custom text-center">
+				<h1 class="card-title quicksand bold mb-4">{{movieDetails.title}}<br><span class="text-muted-custom">({{movieDetails.release_date}})</span></h1>
+
+				<blockquote class="blockquote work-sans">
+					<p class="mb-0 lead">{{movieDetails.tagline}}</p>
+				</blockquote>
+
+				<p>
+					<a href="#movie" class="btn btn-outline-light work-sans" role="button" aria-pressed="true">
+						Continue Reading
+					</a>
+				</p>
+			</div>
+		</div>
+	
+
+        <div id="movie" class="container my-5 clearfix work-sans">
+			<!-- Overview Movie -->
+			<div class="row">
+				<img ng-src="{{recordMovie.poster_path}}" class="col-auto float-left h-100">
+
+				<div class="container col-8 mt-2">
+					<div class="mb-3">
+						<span class="badge badge-pill badge-info custom-badge-dark mr-2 p-2" ng-repeat="genre in movieDetails.genres">{{genre.name}}</span>
+					</div>
+
+					<p class="text-justify"><b class="quicksand h6-custom">Overview</b> <br> {{recordMovie.overview}}</p>
+					<p>
+						<b class="quicksand h6-custom">Budget</b> 
+						<br>
+						${{movieDetails.budget}}
+					</p>
+					
+					<p><b class="quicksand h6-custom">Production Companies</b></p>
+					<img class="float-left mx-3 my-2" ng-src="http://image.tmdb.org/t/p/w154/{{production_company.logo_path}}" ng-repeat="production_company in movieDetails.production_companies" alt="{{production_company.name}}">
+				</div>
+			</div>
+			<!-- END OF Overview Movie -->
+
+
+			<!-- Actor/Actress -->
+			<h3 class="montserrat mt-5">
+				<i class="fas fa-users"></i>
+				Cast
+			</h3>
+
+			<div class="row justify-content-center">
+				
+				<hr class="col-12">
+
+				<div class="card-group mb-3 quicksand">
+					<div class="col-sm-4 col-md-2 mb-3" ng-repeat="cast in casts | limitTo:6">
+						<div class="card">
+							<img class="card-img-top" ng-src="{{cast.profile_path}}" alt="{{cast.name}}">
+							<div class="card-body">
+								<h5 class="card-title" ><b>{{cast.name}}</b></h5>
+								<p class="card-text" >{{cast.character}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END OF Actor/Actress -->
+
+
+			<!-- Videos -->
+			<div class="row mt-5">
+				<h3 class="montserrat">
+					<i class="fas fa-film text-color-dark"></i>
+					Videos
+				</h3>
+				
+				<hr class="col-12">
+
+				<div class="col-xs-12 col-md-6 embed-responsive embed-responsive-16by9" ng-repeat="video in videos">
+					<iframe id="trailerVideo" class="embed-responsive-item my-4 mx-4" ng-src="{{video | trusted}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<!-- END OF Videos -->
+        </div>
+	</body>
+</html>

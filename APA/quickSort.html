@@ -1,0 +1,63 @@
+<script>
+let arr = [];
+let jsondata;   
+//get data1.json to variable  
+fetch('data1.json').then(function(response){
+	return response.json();
+}).then(function(obj){
+	jsondata = obj;
+	//assigning to variable arr
+	for(let i = 0; i <= 99; i++){
+		arr[i] = jsondata[i]["number"];
+	}
+	console.log(arr); //get start arr
+	//get start Time
+	var date = new Date();
+	var startTime = date.getTime();
+	
+	//Quick Sort
+	function partition(low,high){
+		let pivot = arr[high];
+		
+		let i = (low - 1);
+		
+		for(let j = low; j <= high - 1; j++){
+			if(arr[j] < pivot)
+			{
+				i++;
+				let temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+		let temp = arr[i + 1];
+		arr[i + 1] = arr[high];
+		arr[high] = temp;
+		return (i + 1);
+	}
+	
+	function quickSort(low,high){
+		if(low < high){
+			let pi = partition(low,high);
+			
+			quickSort(low,pi - 1);
+			quickSort(pi + 1, high);
+		}
+	}
+	
+	quickSort(0,99);
+	
+	
+	console.log(arr);
+	
+	//get finish time
+	date = new Date();
+	var finishTime= date.getTime();
+	
+	//get deltaTime in miliseconds
+	var deltaTime = finishTime - startTime;
+	
+	
+	document.write(deltaTime);
+});
+</script>

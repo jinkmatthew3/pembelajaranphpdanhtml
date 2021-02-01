@@ -1,0 +1,47 @@
+1. Keuntungan Object Oriented Programming
+    a. Modularitas 
+        Membuat program dengna modul-modul berupa objek
+    b. Flexibilitas
+        Membuat sistem program yang dapat dimodifikasi dan hanya melibatkan objek yang terlibat saja
+    c. Ekspansibilitas
+        Membuat sistem program dapat dikembangkan ke skala yang paling kompleks
+    d. Reusability
+        Objek bisa dipakai lagi pada lintas aplikasi program
+
+2. jelaskan + contoh
+    a. Class
+        class adalah konsep oop yang digunakan untuk mengenkaspsulasi atau membungkus data dan abstraksi prosedural yang diperlukan untuk menggambarakan isi dan tingkah laku dari berbagai entitas.
+        Class Animal{
+            private $name;
+
+            public function getName(){return $this->name;}
+        }
+    b. Object
+        Objek digambarkan sebagai sebuah benda, orang, tempat dll yang ada di dunia nyata dan memiliki attribut dan method
+        Class Dog{
+            private $name;
+
+            public function getName(){return $this->name;}
+        }
+    c. Inheritence
+        Merupakan turunan dari class yang ada menjadi class lain atau objek biasanya akan memiliki beberapa attribute dan method yang sama
+        Class Dog extends Animal{
+            public funtion bark(){return "Barking";}
+        }
+    d. Constructor
+        Merupakan hal2 yang akan dilakukan ketika suatu objek dibuat
+        Class Animal{
+            function __contruct(){
+                echo "wow";
+            }
+        }
+    e. Destructor
+        Merupakan hal2 yang akan dilakukan ketika suatu objek dihancurkan(unset)
+        Class Animal{
+            function __destruct(){
+                echo "Wowzie";
+            }
+        }
+
+3. Model , View, Controller
+    MVC merupakan metode untuk memisahkan antara model(data), view(tampilan user) , dan controller(Pemrosesan data).

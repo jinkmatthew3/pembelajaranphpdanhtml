@@ -1,0 +1,68 @@
+<script>
+let arr = [];
+let jsondata;   
+//get data1.json to variable  
+fetch('data1.json').then(function(response){
+	return response.json();
+}).then(function(obj){
+	jsondata = obj;
+	//assigning to variable arr
+	for(let i = 0; i <= 99; i++){
+		arr[i] = jsondata[i]["number"];
+	}
+	console.log(arr); //get start arr
+	//get start Time
+	var date = new Date();
+	var startTime = date.getTime();
+	
+	// shell sort
+	function shellSort(arr) {
+		let increment = arr.length / 2; // increment is arbitrary
+		while(increment >= 1) {
+			for(let startIndex = 0; startIndex < increment; startIndex++) {
+				insertionSort(arr, startIndex, increment);
+			}
+
+			increment = Math.floor(increment / 2);
+		}
+	}
+	
+	function insertionSort(arr, startIndex, increment) {
+		for(let i = startIndex; i < increment; i++) {
+			let sortedListLastIndex = i;
+			for(let j = i + increment; j < arr.length; j += increment){
+				const current = arr[j];
+				let currentIndex = j;
+				let swapIndex = sortedListLastIndex;
+				while(current < arr[swapIndex] && swapIndex >= 0) {
+					swap(arr, currentIndex, swapIndex);
+					currentIndex -= increment;
+					swapIndex -= increment;
+				}
+				sortedListLastIndex += increment;
+			}
+		}
+	}
+	
+	
+	function swap(arr, i, j) {
+		const temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	
+	shellSort(arr);
+	
+	console.log(arr);
+	
+	//get finish time
+	date = new Date();
+	var finishTime= date.getTime();
+	
+	//get deltaTime in miliseconds
+	var deltaTime = finishTime - startTime;
+	
+	
+	document.write(deltaTime);
+});
+</script>

@@ -1,0 +1,12 @@
+1. 
+Single Quote tidak bisa memuat nilai dari pada suatu variabel
+sementara double Quote bisa
+Single Quote juga tidak bisa memuat spesial karakter seperti \n atau \r sementara double quote bisa
+
+2. 
+a. $i % 3 == 0
+b. $i % 5 == 0
+c. $desc
+d. 'pong'
+e. 'ping'
+f. 'dum'

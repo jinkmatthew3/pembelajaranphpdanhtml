@@ -1,0 +1,40 @@
+<script>
+let arr = [];
+let jsondata;   
+//get data1.json to variable  
+fetch('data5.json').then(function(response){
+	return response.json();
+}).then(function(obj){
+	jsondata = obj;
+	//assigning to variable arr
+	for(let i = 0; i <= 9999; i++){
+		arr[i] = jsondata[i]["number"];
+	}
+	console.log(arr); //get start arr
+	//get start Time
+	var date = new Date();
+	var startTime = date.getTime();
+	
+	// bubble sort
+	for(let i = 0; i <= 9999; i++){
+		for(let j = 9999; j >= 0; j--){
+			if(arr[j] < arr[j-1]){
+				let temp = arr[j];
+				arr[j] = arr[j-1];
+				arr[j-1] = temp;
+			}
+		}
+	}
+	console.log(arr);
+	
+	//get finish time
+	date = new Date();
+	var finishTime= date.getTime();
+	
+	//get deltaTime in miliseconds
+	var deltaTime = finishTime - startTime;
+	
+	
+	document.write(deltaTime);
+});
+</script>

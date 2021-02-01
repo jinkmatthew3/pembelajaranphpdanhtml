@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Home</title>
+
+		<!--Google Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:500|Work+Sans:400,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet"> 
+		<!--END OF Google Fonts-->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="Asset/js/dataApp.js"></script>
+        <script src="Asset/js/dataAppJquery.js"></script>
+        <script src="Asset/js/carousel.js"></script>
+
+		<link rel="stylesheet" href="Asset/css/main.css" type=text/css>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body id="dataApp" ng-app="data" ng-controller="HomeController">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-2 quicksand medium">
+            <a class="navbar-brand ml-5" href="/home.html"><img ng-src="/Asset/image/tmdb-hori.png" alt="logo" width="auto" height="60"></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-color-light" href="/home.html"><b>Home</b><span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/data.html">Data</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                </ul>
+                
+                <span class="navbar-text dropdown mr-5">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, <span class="text-color-light"><b>{{username}}</b></span>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item black" href="#" ng-click="logout()">Logout</a>
+                    </div>
+                </span>
+            </div>
+        </nav>
+
+
+        <!--Carousel-->
+        <div class="container-fluid no-gutters">
+            <div id="carouselExampleControls" class="carousel slide custom-carousel" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner row">
+                    <div class="carousel-item active" style="left:5%;">
+                        <img class="d-block w-100  custom-overlay" ng-src="{{popularMovies[0].backdrop_path}}" alt="{{popularMovies[0].id}}">
+                        <div class="carousel-caption d-none d-md-block custom-carousel-caption">
+                            <h5>{{popularMovies[0].title}}</h5>
+                            <p>{{popularMovies[0].tagline}}</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" ng-repeat="popularMovie in popularMovies | limitTo:(1-popularMovies.length) track by $index">
+                        <img class="d-block" ng-src="{{popularMovie.backdrop_path}}" alt="{{popularMovie.id}}">
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <!--END OF Carousel-->
+	</body>
+</html>

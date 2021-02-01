@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Game UTS</title>
+	<script type="text/javascript" src="logic.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+
+</head>
+<body onload="onDocumentFinish()">
+	<div  id="tampilanawal">
+		<div class="row" id="marginawal">
+			<div class="col-sm-2 blue"></div>
+		  		<div class="col-sm-8 yellow border" style="box-shadow: 5px 10px 8px #eee; padding: 5px; height: 110px;"  id="formContent">
+		  			<form id="formSubmit" onsubmit="submitItem()">
+		  				<div class="row" >
+			  				<div class="col-sm-6" style="display: inline; text-align: right; padding-right: 50px;">
+			  				<label>Name</label>
+			     				<input type="text" id="nama" class=" fadeIn second" name="nama" placeholder=" Input Your Player Name">
+			     			</div>
+			     			<div class="col-sm-6" style="display: inline;">
+			     				<label>Birthdate</label>
+			      				<input type="date" id="date" class="fadeIn third" name="date">
+			      			</div>
+		      			</div>
+		      			<div class="row">
+			      			<div class="col text-center" style="padding:20px;">
+			      			
+			      				<input type="submit" class="fadeIn fourth center" value="submit" style="box-shadow: 0px 1px 0px grey;" >		
+							</div>    
+						</div>		
+		    		</form>
+		  		</div>
+	  		<div class="col-sm-2 blue"></div>
+		</div>
+	</div>
+</body>
+</html>

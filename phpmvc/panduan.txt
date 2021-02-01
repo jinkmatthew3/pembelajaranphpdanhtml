@@ -1,0 +1,8 @@
+maaf masih banyak nama file atau variabel yang enggak sesuai dan malah bikin bingung
+
+.htaccess itu fungsinya buat routing biar webnya aman
+sourcenya dari https://www.youtube.com/watch?v=-wBKfa0-yyQ&index=3&list=PLFIM0718LjIVEh_d-h5wAjsdv2W4SAtkx
+ganti viewsnya bisa langsung di bagian views
+buat ganti2 header atau footer bisa liat ke templates
+buat image dari register kesimpen di public/img dan di simpen pathnya di database
+kalo mau ganti tempat nyimpennya bisa ke models/Registrasi_model.php

@@ -1,0 +1,41 @@
+<script>
+let arr = [];
+let jsondata;   
+//get data1.json to variable  
+fetch('data5.json').then(function(response){
+	return response.json();
+}).then(function(obj){
+	jsondata = obj;
+	//assigning to variable arr
+	for(let i = 0; i <= 9999; i++){
+		arr[i] = jsondata[i]["number"];
+	}
+	console.log(arr); //get start arr
+	//get start Time
+	var date = new Date();
+	var startTime = date.getTime();
+	
+	// insertion sort
+	for(let i = 1; i <= 9999; i++){
+		let key = arr[i];
+		let j = i - 1;
+		
+		while(j >= 0 && arr[j] > key){
+			arr[j+1] = arr[j];
+			j = j - 1;
+		}		
+		arr[j+1] = key;
+	}
+	console.log(arr);
+	
+	//get finish time
+	date = new Date();
+	var finishTime= date.getTime();
+	
+	//get deltaTime in miliseconds
+	var deltaTime = finishTime - startTime;
+	
+	
+	document.write(deltaTime);
+});
+</script>

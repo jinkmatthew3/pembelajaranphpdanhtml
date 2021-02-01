@@ -1,0 +1,16 @@
+Tugas Komprehensif
+Bella Anggraini Utomo
+00000026139
+
+
+1. fungsi callback dan tipenya
+Jawab : 
+--> fungsi callback adalah untuk melakukan escap dari suatu proses dan memasukan logikanya sebelum meneruskan ke proses akhir. biasanya grocery crud memberntuk form input data secara otomatis, jika kita membutuhkan modifikasi terhadap data yang dimasukkan ke database, maka akan timbul kesulitan baru. 
+--> tipe - tipe
+- callback column
+- callback delete
+- callback after (delete, insert, update, dan upload)
+- callback before (delete,insert,update,dan upload)
+- callback add field
+- callback edit field
+- callback unset

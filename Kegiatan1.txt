@@ -1,0 +1,11 @@
+1.- Cross-Site Scripting (XSS) = attacker meng'inject script sisi client ke halaman web.
+  - SQL Injection = Teknik code inject berupa SQL yang menyerang database.
+
+2.  - X-XSS-Protection untuk mencegah XSS
+     - SQL Parameters untuk memproteksi SQL Injection
+
+3. md5 adalah fungsi hash cryptographic yang digunakan secara luas dengan hash value 128-bit.
+
+4. - Secure Hash Algorithm 3 (SHA-3)
+     - RIPE Message Digest (RIPEMD)
+     - BLAKE

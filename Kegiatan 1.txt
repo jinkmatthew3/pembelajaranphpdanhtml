@@ -1,0 +1,27 @@
+1. Sebutkan dan Jelaskan 2 cara user input exploitation pada web
+-> SQL Injection    : serangan yang memanfaatkan kelalaian dari website yang mengijinkan user untuk menginputkan data tertentu tanpa melakukan filter terhadap malicious character untuk mendapatkan suatu data yang sensitif dari database. Caranya dengan membuat query yang dimasukkan bernilai TRUE pada inputan.
+
+-> Buffer Overflows : serangan yang terjadi ketika user memberikan input yang berlebihan pada program yang dijalankan sehingga membuat program mengalami kelebihan muatan dan memory tidak dapat mengalokasikannya.
+
+
+2. Sebutkan cara yang dapat dilakukan untuk menghindari kedua user input exploitation tersebut
+Cara menghindari SQL Injection:
+- Tidak menggunakan parameter dari URL / form tanpa melakukan validasi
+- Menggunakan firewall aplikasi web
+- Membatasi hak istimewa database menurut konteks
+- Mempekerjakan sanitasi data yang komprehensif
+
+Cara menghindari Buffer Overflows :
+- Melakukan code review
+- Memakai library khusus untuk mencegah kesalahan umum
+- Menulis kembali program dengan bahasa lain (jika memungkinkan)
+- Menggunakan tools yang bisa melakukan pemeriksaan statik
+
+3. Apa yang dimaksud dengan md5 ?
+md5 adalah fungsi hash kriptografi yang banyak digunakan untuk menenkripsi plaintext menjadi digit hex.
+
+4. Sebutkan 3 cara hashing selain dengan menggunakan metode md5!
+- SHA-1(Secure Hash Algorithm)
+- SHA-2
+- RIPEMD-160
+- Whirlpool

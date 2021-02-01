@@ -1,0 +1,5 @@
+mahasiswa.sql = sql yg dipakai (di export dari phpmyadmin)
+tugas1.php = file untuk menampilkan isi tabel dari sql
+tugas2.php = form untuk add/edit database
+studentResponse.php = response add/edit dari form tugas2.php
+delete.php = response delete data dari tabel tugas1.php

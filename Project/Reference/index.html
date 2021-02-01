@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Masuk - Basis Data Film</title>
+	<link rel="shortcut icon" type="image/png" href="img/basisDataFilm.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	
+	<!-- Font Awesome JS -->
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-cookies.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="js/login.js"></script>
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top text-uppercase font-weight-700 p-3" style="background-color: #132128;">
+		<a class="navbar-brand" href="#"><img src="img/basisDataFilm.png" width=75px></a>
+
+		<button class="navbar-toggler mt-auto mb-auto" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation" style="max-width: 100px;"><span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarLinks">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="content">
+
+		<div class="modal-dialog text-center" ng-app="masukWeb" ng-controller="masukWebController">
+			<div class="col-8 col-sm-8 main-section">
+				<div class="modal-content">
+					<div class="col-12 p-2">
+						<h4 class="form-header">Masuk ke <b>Akun</b></h3>
+					</div>
+
+					<form class="col-12" ng-submit="masuk(pengguna, kunci)">
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="pengguna" placeholder="Masukkan Nama Pengguna" required>
+						</div>
+
+						<div class="form-group">
+							<input type="password" class="form-control" ng-model="kunci" placeholder="Masukkan Kata Kunci" required>
+						</div>
+
+						<div class="form-group" style="color: #01d277" ng-show="showError">
+							Invalid Username or Password
+						</div>
+
+						<button type="submit" class="btn">Masuk</button>
+					</form>
+				</div> <!-- End of modal-content -->
+			</div> <!-- End of main-section -->
+		</div>
+
+	</div> <!-- End of Content -->
+
+
+	<!-- Footer -->
+	<footer class="footer pt-4 pb-4">
+		<div class="container">
+			<div class="row hg-400 align-items-center">
+
+				<div class="col-12 col-lg-auto mr-2 ml-2 p-4 d-none d-md-block">
+					<img src="img/basisDataFilm.png" width=125px>
+				</div>
+
+				<div class="col-12 col-md-3 col-lg-3 mr-2 ml-2 p-4">
+			      <h4 class="text-uppercase font-weight-bold">Mulai di sini</h6>
+			      <p class="mb-0"><a href="#">Tentang</a></p>
+			      <p class="mb-0"><a href="#">Bantuan</a></p>
+			      <p class="mb-0"><a href="#">Kontak</a></p>
+			    </div>
+
+			    <div class="col-12 col-md-3 col-lg-3 mr-2 ml-2 p-4">
+			      <h4 class="text-uppercase font-weight-bold">Gabung</h6>
+			      <p class="mb-0"><a href="#">Aplikasi</a></p>
+			      <p class="mb-0"><a href="#">Tambah Film</a></p>
+			      <p class="mb-0"><a href="#">Tambah Serial TV</a></p>
+			    </div>
+
+			    <div class="col-12 col-md-3 col-lg-3 mr-2 ml-2 p-4">
+			      <h4 class="text-uppercase font-weight-bold">Komunitas</h6>
+			      <p class="mb-0"><a href="#">Panduan</a></p>
+			      <p class="mb-0"><a href="#">Forum</a></p>
+			      <p class="mb-0"><a href="#">Twitter</a></p>
+			    </div>
+
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

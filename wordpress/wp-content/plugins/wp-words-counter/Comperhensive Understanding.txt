@@ -1,0 +1,13 @@
+1. Sebutkan dan jelaskan kategori dari PHP framework beserta contohnya!
+- CMS
+    CMS sudah disediakan oleh sang pembuat sehingga konten2 yg ingin disajikan tinggal digunakan saja
+    contohnya : joomla, wordpress, blogspot
+- Custom Application
+    Custom Application lebih mementingkan keinginan sang pembuat jadi lebih bisa diutak atik
+    Conthnya : codeigneter
+2. Jelaskan minimal 5 framework kategori web CMS
+    - Wordpress
+    - Drupal
+    - joomla
+    - Expression Engine
+    - TextPattern

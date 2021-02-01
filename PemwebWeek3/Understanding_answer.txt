@@ -1,0 +1,19 @@
+Nama : Dhammajoti 
+NIM  : 00000026274
+
+Tugas komprehensif 
+1. Jelaskan perbedaan fungsi MySQLi dan PDO !
+   => Mysqli : - hanya support database mysql
+	       - bisa OOP + Prosedural
+	       - tidak fleksibel dalam mengikat parameter bernama
+   => PDO    : - Support banyak database
+	       - bisa OOP
+	       - Lebih mudah dalam mengikat parameter bernama	
+2. Terdapat perbedaan cara mengakses kolum pada table database antara kegiatan 2.1 dan 2.2 ,
+jelaskan secara singkat dan jelas perbedaan tersebut !
+   => Mysqli hanya menggunakan spesific connection string sedangkan PDO menggunakan database type dan database spesifik koneksi string
+3. Dari ketiga cara menghubungkan php dengan database , menurut kalian cara mana yang
+terbaik digunakan untuk menghubungkan php dengan mysql . Berikan penjelasan secara
+lengkap dan jelas !
+   => jika menggunakan database mysql maka cara paling terbaik menggunakan PDO karena lebih mudah dalam penggunaan
+dan lebih banyak kelebihan
